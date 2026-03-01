@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://gelsbfagmddh" path="res://holding_item_label.gd" id="5_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef8iw"]
-size = Vector2(128, 128)
+size = Vector2(64, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(78, 66)
@@ -34,7 +34,7 @@ shape = SubResource("RectangleShape2D_ef8iw")
 [node name="Reach" type="Area2D" parent="CharacterBody2D" unique_id=286481940]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Reach" unique_id=2110757525]
-position = Vector2(102, 1)
+position = Vector2(71, -1)
 shape = SubResource("RectangleShape2D_0e48y")
 
 [node name="Tomato" parent="." unique_id=973577741 instance=ExtResource("3_0hol4")]
