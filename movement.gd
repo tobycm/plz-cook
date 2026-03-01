@@ -32,13 +32,24 @@ func _process(_delta: float) -> void:
 	# "ui_accept" is the Spacebar or Enter key by default
 	if Input.is_action_just_pressed("ui_accept") || Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		# print("Pressed Accept")
-		var overlapping_objects = reach_area.get_overlapping_areas()
-		
-		for object in overlapping_objects:
-			# print(object)
-			if object.is_in_group("ingredients"):
-				# print(object)
-				if len(Inventory.holding) < 5:
-					Inventory.holding.append(object.item_id)
+		var overlapping_objects: Array[Area2D] = reach_area.get_overlapping_areas()
 
-					object.queue_free()
+		# print(overlapping_objects)
+
+		var filtered_overlapping_objects: Array[Area2D] = overlapping_objects.filter(func(area): return area.is_in_group("ingredients"))
+		
+		# print(filtered_overlapping_objects)
+		
+		if filtered_overlapping_objects.size() == 0:
+			return
+
+		var object := filtered_overlapping_objects[0]
+
+		if Inventory.holding != "":
+			return
+
+		Inventory.holding = object.item_id
+		object.queue_free()
+
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		Inventory.holding = ""
