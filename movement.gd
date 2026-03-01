@@ -41,4 +41,4 @@ func _process(_delta: float) -> void:
 				if len(Inventory.holding) < 5:
 					Inventory.holding.append(object.item_id)
 
-				object.queue_free()
+					object.queue_free()

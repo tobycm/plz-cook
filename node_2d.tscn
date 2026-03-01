@@ -7,16 +7,26 @@
 [ext_resource type="PackedScene" uid="uid://wmvdbh7hadng" path="res://item_spawner.tscn" id="5_d21ai"]
 [ext_resource type="Script" uid="uid://gelsbfagmddh" path="res://holding_item_label.gd" id="5_q6r6c"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+font_size = 48
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef8iw"]
 size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(78, 66)
 
-[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
-font_size = 64
-
 [node name="Node2D" type="Node2D" unique_id=627016789]
+
+[node name="Label" type="Label" parent="." unique_id=297778014]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 50.0
+offset_bottom = 89.0
+text = "1"
+label_settings = SubResource("LabelSettings_0hol4")
+horizontal_alignment = 2
+script = ExtResource("5_q6r6c")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1186278294]
 position = Vector2(554, 142)
@@ -41,16 +51,6 @@ position = Vector2(-196, -80)
 item_id = "tomato"
 item_texture = ExtResource("4_kdubu")
 
-[node name="ItemSpawner" parent="." unique_id=1121020060 node_paths=PackedStringArray("item") instance=ExtResource("5_d21ai")]
+[node name="TomatoSpawner" parent="." unique_id=1121020060 node_paths=PackedStringArray("item") instance=ExtResource("5_d21ai")]
 position = Vector2(-5, 0)
 item = NodePath("../Tomato")
-
-[node name="Label" type="Label" parent="." unique_id=297778014]
-offset_left = 10.0
-offset_top = 1.0
-offset_right = 50.0
-offset_bottom = 89.0
-text = "1"
-label_settings = SubResource("LabelSettings_0hol4")
-horizontal_alignment = 2
-script = ExtResource("5_q6r6c")
