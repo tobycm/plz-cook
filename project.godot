@@ -21,7 +21,12 @@ Inventory="*uid://dteetf8tke4no"
 
 [display]
 
+window/size/viewport_width=512
+window/size/viewport_height=320
+window/size/window_width_override=1024
+window/size/window_height_override=640
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
@@ -64,6 +69,7 @@ ui_down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

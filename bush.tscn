@@ -4,19 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dlbgu2hhci526" path="res://bush.png" id="2_ilexf"]
 [ext_resource type="Script" uid="uid://df2qbwyb6ybh" path="res://bush_countdown.gd" id="3_ilexf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ki2aw"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilexf"]
+size = Vector2(32, 32)
 
 [node name="Bush" type="StaticBody2D" unique_id=436001843]
 script = ExtResource("1_28u5p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=934638376]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 texture = ExtResource("2_ilexf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1166988330]
-scale = Vector2(1.25, 1.25)
-shape = SubResource("CircleShape2D_ki2aw")
 
 [node name="Timer" type="Timer" parent="." unique_id=568147580]
 one_shot = true
@@ -24,11 +20,14 @@ autostart = true
 
 [node name="Label" type="Label" parent="." unique_id=1995993750]
 offset_left = -20.0
-offset_top = -58.0
+offset_top = -36.0
 offset_right = 20.0
-offset_bottom = -35.0
+offset_bottom = -13.0
 text = "123"
 horizontal_alignment = 1
 script = ExtResource("3_ilexf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691861364]
+shape = SubResource("RectangleShape2D_ilexf")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
