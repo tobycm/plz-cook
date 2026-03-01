@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cwt85hfedx3uu"]
+
+[ext_resource type="Texture2D" uid="uid://b061v7wnat6u3" path="res://2.png" id="1_ajaoc"]
+[ext_resource type="Script" uid="uid://c857uqamrjuf0" path="res://item.gd" id="1_joa5w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+radius = 9.0
+
+[node name="Item" type="Area2D" unique_id=973577741 groups=["ingredients"]]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("1_joa5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1184765134]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_ajaoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1866828755]
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_0hol4")

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://boowoh043g3a0"]
+
+[ext_resource type="Script" uid="uid://b40iay6kyk734" path="res://movement.gd" id="1_ef8iw"]
+[ext_resource type="Texture2D" uid="uid://f2gfmoqei5ib" path="res://icon.svg" id="2_8mc0t"]
+[ext_resource type="PackedScene" uid="uid://cwt85hfedx3uu" path="res://item.tscn" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://b061v7wnat6u3" path="res://2.png" id="4_kdubu"]
+[ext_resource type="PackedScene" uid="uid://wmvdbh7hadng" path="res://item_spawner.tscn" id="5_d21ai"]
+[ext_resource type="Script" uid="uid://gelsbfagmddh" path="res://holding_item_label.gd" id="5_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ef8iw"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(78, 66)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+font_size = 64
+
+[node name="Node2D" type="Node2D" unique_id=627016789]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1186278294]
+position = Vector2(554, 142)
+script = ExtResource("1_ef8iw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1151562485]
+rotation = -1.5707964
+texture = ExtResource("2_8mc0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1741029956]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ef8iw")
+
+[node name="Reach" type="Area2D" parent="CharacterBody2D" unique_id=286481940]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Reach" unique_id=2110757525]
+position = Vector2(102, 1)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Tomato" parent="." unique_id=973577741 instance=ExtResource("3_0hol4")]
+position = Vector2(-196, -80)
+item_id = "tomato"
+item_texture = ExtResource("4_kdubu")
+
+[node name="ItemSpawner" parent="." unique_id=1121020060 node_paths=PackedStringArray("item") instance=ExtResource("5_d21ai")]
+position = Vector2(-5, 0)
+item = NodePath("../Tomato")
+
+[node name="Label" type="Label" parent="." unique_id=297778014]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 50.0
+offset_bottom = 89.0
+text = "1"
+label_settings = SubResource("LabelSettings_0hol4")
+horizontal_alignment = 2
+script = ExtResource("5_q6r6c")
