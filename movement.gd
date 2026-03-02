@@ -4,6 +4,8 @@ const SPEED = 200.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+var init_scale = scale.x
+
 func _physics_process(_delta: float) -> void:
 	# 1. Get the input direction from the keyboard
 	# This returns a Vector2 with an X and Y value between -1 and 1
@@ -19,6 +21,10 @@ func _physics_process(_delta: float) -> void:
 		direction = Vector2(0, 1)
 
 	if direction != Vector2.ZERO:
+		# if direction.x == -1 and direction.y == 0:
+		# 	scale.x = - init_scale
+		# else:
+		# 	scale.x = init_scale
 		look_at(position + direction)
 
 	velocity = direction * SPEED
@@ -78,7 +84,6 @@ func _process(_delta: float) -> void:
 			var object: Node2D = interactables[0]
 			if object.item_id == "trash_can":
 				#print("threw away " + Inventory.holding)
-				
 				if Inventory.holding == null:
 					return
 				Inventory.holding.queue_free()

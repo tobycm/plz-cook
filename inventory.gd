@@ -5,3 +5,5 @@ var holding: Node2D = null
 var looking_at: Node2D = null
 
 var money: int = 0
+
+var request: Node2D = null

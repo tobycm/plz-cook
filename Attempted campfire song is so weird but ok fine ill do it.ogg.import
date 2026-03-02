@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wal4vx0dhgln"
+path="res://.godot/imported/Attempted campfire song is so weird but ok fine ill do it.ogg-d67bae384e4b355c967f302cffe380c9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Attempted campfire song is so weird but ok fine ill do it.ogg"
+dest_files=["res://.godot/imported/Attempted campfire song is so weird but ok fine ill do it.ogg-d67bae384e4b355c967f302cffe380c9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

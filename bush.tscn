@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bxck1ffr7r3f4" path="res://bush.gd" id="1_28u5p"]
 [ext_resource type="Texture2D" uid="uid://dlbgu2hhci526" path="res://bush.png" id="2_ilexf"]
 [ext_resource type="Script" uid="uid://df2qbwyb6ybh" path="res://bush_countdown.gd" id="3_ilexf"]
+[ext_resource type="FontFile" uid="uid://d4asvinsc7alo" path="res://PlaypenSans-VariableFont_wght.ttf" id="3_ki2aw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahiml"]
+font = ExtResource("3_ki2aw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilexf"]
 size = Vector2(32, 32)
@@ -24,6 +28,7 @@ offset_top = -36.0
 offset_right = 20.0
 offset_bottom = -13.0
 text = "123"
+label_settings = SubResource("LabelSettings_ahiml")
 horizontal_alignment = 1
 script = ExtResource("3_ilexf")
 
